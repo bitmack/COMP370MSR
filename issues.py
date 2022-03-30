@@ -26,7 +26,7 @@ issues_record = []
 count = 0
 
 for issue in all_issues:
-    if count >= 5000:
+    if count >= 10000 and issue.pulls ==True:
         break
     else:
         issue = {
