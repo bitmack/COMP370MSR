@@ -87,6 +87,7 @@ for i in commits_trees_urls:
     # the loop iterates throught each litle tree of given commit to fetch code size and path, other attribues are for debugging purposes.
     # example above
     for each_tree in i_tree:
+    counter = counter+1
         if each_tree == "tree":
             tr = {
                 "commit_sha sha": each_tree["sha"],
