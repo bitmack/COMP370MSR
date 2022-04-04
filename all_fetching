@@ -81,12 +81,14 @@ counter = 0
 for i in commits_trees_urls:
     link = i["commit_url"]
     if counter < 5000:  # prevention of rate limit error
-        # example of i https://api.github.com/repos/mozilla-mobile/fenix/git/trees/f6256a928e3af27b01dcc367077fdf2fb83400ef
-        i_tree = requests.get(link, auth=("ovusa", ACCESS_TOKEN))
+
+       # example of i https://api.github.com/repos/mozilla-mobile/fenix/git/trees/f6256a928e3af27b01dcc367077fdf2fb83400ef
+       i_tree = requests.get(link, auth=("ovusa", ACCESS_TOKEN))
 
     # the loop iterates throught each litle tree of given commit to fetch code size and path, other attribues are for debugging purposes.
     # example above
     for each_tree in i_tree:
+    counter = counter+1
         if each_tree == "tree":
             tr = {
                 "commit_sha sha": each_tree["sha"],
