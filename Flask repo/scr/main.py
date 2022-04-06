@@ -71,9 +71,6 @@ for c in commits:
 data = pd.DataFrame(commits_record)
 data.to_csv("commits.csv", sep=";", encoding="utf-8", index=True)
 
-
-
-# the list collects all entities of tree for each commit (Commit ->url->tree-> sha/code size)
 each_commit_tree = []
 code_sizeS = []
 counter = 0
